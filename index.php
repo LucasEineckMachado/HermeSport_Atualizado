@@ -16,8 +16,10 @@
 <body>
 
     <!-- Cabeçalho -->
-    <header>
-        <img class="logo1" src="img/logo1.png" alt="Logo">
+    <header> 
+        <div class="logo">
+            <img src="img/logo1.png" alt="Logo">
+        </div>
     </header>
 
     <!-- Navegação -->

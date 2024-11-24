@@ -1,4 +1,3 @@
-// aula 05
 // criar a variável modalKey sera global
 let modalKey = 0
 
@@ -38,7 +37,6 @@ const botoesFechar = () => {
 }
 
 const preencheDadosDosProdutos = (produtoItem, item, index) => {
-    // aula 05
     // setar um atributo para identificar qual elemento foi clicado
     produtoItem.setAttribute('data-key', index)
     produtoItem.querySelector('.produto-item--img img').src = item.img
@@ -54,7 +52,6 @@ const preencheDadosModal = (item) => {
     seleciona('.produtoInfo--actualPrice').innerHTML = formatoReal(item.price[2])
 }
 
-// aula 05
 const pegarKey = (e) => {
     let key = e.target.closest('.produto-item').getAttribute('data-key')
     console.log('Produto clicado ' + key)

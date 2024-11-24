@@ -16,7 +16,7 @@ const produtoJson = [
         id: 2,
         name: 'Bermuda preta adidas',
         img: 'img/produto2.png',
-        price: [80.00, 80.00, 80.00],
+        price: [80.00, 100.00, 120.00],
         sizes: [
           '',
           '',
@@ -28,7 +28,7 @@ const produtoJson = [
         id: 3,
         name: 'Bermuda box venum',
         img: 'img/produto3.png',
-        price: [120.00, 120.00, 120.00],
+        price: [120.00, 240.00, 300.00],
         sizes: [
           '',
           '',
@@ -40,7 +40,7 @@ const produtoJson = [
         id: 4,
         name: 'Bermuda nike branca',
         img: 'img/produto4.png',
-        price: [90.00, 90.00, 90.00],
+        price: [90.00, 110.00, 135.00],
         sizes: [
           '',
           '',
@@ -172,7 +172,7 @@ const produtoJson = [
         id: 17,
         name: 'Camisa Adidas Seleção Alemanha 2016',
         img: 'img/produto19.png',
-        price: [160.00, 160.00, 160.00],
+        price: [160.00, 200.00, 240.00],
         sizes: [
           '',
           '',
@@ -184,7 +184,7 @@ const produtoJson = [
         id: 18,
         name: 'Camisa Athletico',
         img: 'img/produto20.png',
-        price: [160.00, 160.00, 160.00],
+        price: [160.00, 200.00, 230.00],
         sizes: [
           '',
           '',
@@ -544,6 +544,32 @@ const produtoJson = [
         id: 48,
         name: 'Rashguard Venum Snaker  Preto-Amarelo',
         img: 'img/produto70.png',
+        price: [160.00, 160.00, 160.00],
+        sizes: [
+          '',
+          '',
+          ''
+        ],
+        description: ''
+      },
+
+      {
+        id: 49,
+        name: 'Bicicleta Santa Cruz',
+        img: 'img/produto5.png',
+        price: [1200.00, 1200.00, 1200.00],
+        sizes: [
+          '',
+          '',
+          ''
+        ],
+        description: ''
+      },
+
+      {
+        id: 50,
+        name: 'Luva de Box venom',
+        img: 'img/produto60.png',
         price: [160.00, 160.00, 160.00],
         sizes: [
           '',

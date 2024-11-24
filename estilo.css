@@ -6,50 +6,62 @@
     box-sizing: border-box;
 }
 
+/* Corpo principal */
 body {
-    font-family: 'Bebas Neue', sans-serif; /* Adicione fontes fallback */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da viewport */
+    font-family: 'Bebas Neue', sans-serif;
     line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
-    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
 /* Estilo do Cabeçalho */
 header {
-    background-color: black; /* Fundo preto para o header */
-    padding: 10px;
-    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100px;
+    background-color: #000000;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
 }
 
-.logo1 {
-    max-width: 150px; /* Tamanho fixo para o logo principal */
-    height: auto;
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+}
+
+.logo img {
+    width: 100px; /* Tamanho da logo */
 }
 
 /* Estilo da Navegação */
 nav {
+    font-family: 'Bebas Neue', sans-serif; /* Adicione fontes fallback */
+    position: fixed;
+    left: 0;
+    top: 100px;
+    right: 0;
     background-color: #ff6600; /* Fundo laranja */
     color: #fff;
     padding: 5px 15px; /* Reduzido para ocupar menos espaço */
     display: flex;
     align-items: center;
-    position: relative;
     height: 60px; /* Altura definida para manter uma proporção menor */
 }
 
 /* Logo secundário no lado esquerdo do menu */
 .logo2 {
     position: absolute; /* Posição absoluta para fixar no canto */
-    left: 200px; /* Ajusta para o canto esquerdo */
+    left: 550px; /* Ajusta para o canto esquerdo */
     top: 50%; /* Centraliza verticalmente */
     transform: translateY(-50%); /* Ajusta para o centro vertical */
     max-width: 60px; /* Reduz tamanho do logo secundário */
     height: auto;
-}
-
-/* Itens de navegação */
-.nav-item {
-    display: flex;
-    align-items: center; /* Alinha verticalmente os itens */
 }
 
 /* Contêiner do Menu de Navegação */
@@ -70,6 +82,7 @@ nav {
     gap: 15px; /* Espaçamento aumentado entre os itens */
 }
 
+
 #navMenu li {
     margin: 0;
 }
@@ -81,12 +94,14 @@ nav {
     font-size: 16px; /* Aumenta o tamanho da fonte */
     padding: 8px 12px; /* Adiciona um pouco de espaço ao redor do texto */
     transition: transform 0.3s ease, color 0.3s ease; /* Adiciona transição para animação */
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 #navMenu a:hover {
     transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
     color: #f0e68c; /* Altera a cor ao passar o mouse */
 }
+
 
 
 /* Botões para abrir e fechar o menu (visível em dispositivos móveis) */
@@ -141,28 +156,35 @@ nav {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    height: 100vh; /* Ajusta a altura para preencher a viewport */
-    padding: 20px; /* Adiciona um pouco de padding */
+    flex: 1; /* Faz o wrapper crescer para ocupar o espaço restante */
+    padding: 20px;
     gap: 20px; /* Espaço entre o main e o aside */
+    overflow: auto; /* Garante que não ocorra overflow */
 }
 
-/* Seção principal */
+
+/* Main deve crescer para ocupar o espaço disponível */
 main {
-    flex: 2; /* Garante que ocupe mais espaço que o aside */
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    max-width: 70%; /* Ajuste a largura máxima conforme necessário */
+    flex: 1; /* Faz o main crescer para ocupar o espaço restante */
+    padding-top: 60px; /* Ajuste maior espaçamento acima das caixas */
+    padding-left: 20px; /* Mantém os lados */
+    padding-right: 20px;
+    padding-bottom: 20px; /* Espaço inferior inalterado */
+    text-align: center;
 }
 
+
+/* Ajuste do container de slides */
 .slides-container {
-    position: relative;
+    position: sticky;
+    top: 200px; /* Mesma distância que o aside */
     width: 100%;
-    height: 60vh; /* Ajusta a altura dos banners */
+    height: 60vh; /* Ajuste a altura de acordo com a necessidade */
     overflow: hidden;
+    z-index: 10; /* Certifique-se de que está acima de outros elementos */
 }
 
+/* Ajuste para os slides */
 .slides {
     display: none;
     position: relative;
@@ -170,35 +192,45 @@ main {
     height: 100%;
 }
 
+/* Ajuste da imagem para que ela cubra a área do slide sem distorcer */
 .slides img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ajusta a imagem para cobrir toda a área do slide sem distorcer */
 }
 
+
 /* Botões de navegação para os slides */
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 50%; /* Centraliza verticalmente */
     width: auto;
     padding: 16px;
-    margin-top: -22px;
+    margin-top: -22px; /* Ajusta para centralização vertical */
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+    transition: 0.6s ease; /* Suaviza a transição */
+    user-select: none; /* Evita seleção do texto */
+    z-index: 10; /* Garante que fique acima do conteúdo */
 }
 
+/* Estilização para o botão "Prev" */
+.prev {
+    left: 0; /* Alinha à esquerda */
+    border-radius: 3px 0 0 3px; /* Bordas arredondadas no lado direito */
+}
+
+/* Estilização para o botão "Next" */
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    right: 0; /* Alinha à direita */
+    border-radius: 0 3px 3px 0; /* Bordas arredondadas no lado esquerdo */
 }
 
+/* Efeito ao passar o mouse */
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
 }
 
 /* Pontos dos slides */
@@ -224,10 +256,12 @@ main {
     background-color: #717171;
 }
 
-/* Seção do Mapa */
+/* Seção da caixa Sobre nos */
 aside {
     flex: 1; /* Garante que ocupe menos espaço que o main */
     padding: 10px;
+    position: sticky;
+    top: 200px; /* Espaço abaixo da navegação */
     box-shadow: 0px 0px 0px 0px rgba(255, 103, 15, 0.699); /* Opcional: adiciona uma sombra ao redor do mapa */
     height: 60vh; /* Ajusta a altura do mapa para coincidir com a altura dos banners */
     max-width: 30%; /* Ajuste a largura máxima conforme necessário */
@@ -255,11 +289,13 @@ aside p{
 }
 
 /* Rodapé */
+
 footer {
-    background-color: black; /* Fundo preto para o footer */
-    padding: 15px;
+    background-color: black;
+    color: #fff;
     text-align: center;
-    color: white; /* Texto em branco */
+    padding: 13px;
+    margin-top: auto; /* Empurra o rodapé para o fundo da página */
 }
 
 /* Links do rodapé */
